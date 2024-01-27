@@ -5,7 +5,7 @@
 <pre><span style="font-size:18px"><strong>Input:
 </strong>No Input
 <strong>Output:
-</strong>Hello World</span></pre>
+</strong>Hello  world</span></pre>
 
 <p><span style="font-size:18px"><strong>Your Task:</strong></span></p>
 
