@@ -4,7 +4,7 @@
 n = 3
 arr[] = {1, 2, 1}
 <strong>Output</strong>: 
-1 1 2
+1 1  2
 1 2 1
 2 1 1
 <strong>Explanation</strong>:
