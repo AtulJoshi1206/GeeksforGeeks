@@ -2,7 +2,7 @@
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
-<pre><span style="font-size:18px"><strong>Input:
+<pre> <span style="font-size:18px"><strong>Input:
 </strong>No Input
 <strong>Output:
 </strong>Hello  world</span></pre>
