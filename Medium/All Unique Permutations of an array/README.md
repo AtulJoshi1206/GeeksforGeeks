@@ -2,7 +2,7 @@
 <p><span style="font-size: 18px;"><strong>Example 1:</strong></span></p>
 <pre><span style="font-size: 18px;"><strong>Input</strong>: 
 n = 3
-arr[] = {1, 2, 1}
+arr[] = {1, 2,1}
 <strong>Output</strong>: 
 1 1  2
 1 2 1
