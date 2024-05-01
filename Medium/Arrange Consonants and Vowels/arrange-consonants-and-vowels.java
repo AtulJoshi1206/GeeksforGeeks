@@ -66,39 +66,40 @@ class Node {
     }
 }
 */
+
 class Solution {
-    //Bruteforce approach
-    public Node arrangeCV(Node head){
-        //write code here and return the head of changed linked list
-        List<Character> set = new ArrayList<>();
-        List<Character> consonants = new ArrayList<>(); 
-        Node curr = head;
-        
-        while(curr != null){
-            char d = curr.data;
-            if(d == 'a' || d == 'e' || d == 'i' || d == 'o' || d =='u'){
-                set.add(d);
-            }else{
-                consonants.add(d);
+    // Rearrange the linked list such that all vowels come before consonants
+    public Node arrangeCV(Node head) {
+        if (head == null || head.next == null)
+            return head; // If the list is empty or has only one node, no rearrangement needed
+
+        Node vowelHead = new Node('0'); // Dummy head for vowels
+        Node consonantHead = new Node('0'); // Dummy head for consonants
+        Node vowel = vowelHead, consonant = consonantHead;
+
+        // Traverse the original list
+        for (Node curr = head; curr != null; curr = curr.next) {
+            if (isVowel(curr.data)) {
+                vowel.next = curr;
+                vowel = curr;
+            } else {
+                consonant.next = curr;
+                consonant = curr;
             }
-            curr = curr.next;
         }
-        Node current = new Node('0');
-        Node arrange = current;
-        for(char c : set){
-            Node vowel = new Node(c);
-            current.next = vowel;
-            current = vowel;
-            // System.out.print(c + " ");
-        }
-        
-        for(char c : consonants){
-            Node con = new Node(c);
-            current.next = con;
-            current = con;
-            // System.out.print(c + " ");
-        }
-        return arrange.next;
+
+        // Connect the end of the vowel list to the beginning of the consonant list
+        vowel.next = consonantHead.next;
+        // Set the end of the consonant list to null to terminate it
+        consonant.next = null;
+
+        // Return the next node after the dummy head of the vowel list
+        return vowelHead.next;
+    }
+
+    // Helper method to check if a character is a vowel
+    private boolean isVowel(char c) {
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
     }
 }
 
